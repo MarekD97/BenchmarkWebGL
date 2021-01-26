@@ -85,6 +85,7 @@ const ResultsPage = (props) => {
        });
    
     }
+    console.log(cookies);
     return (
         <div>
             <AppBar position='static'>
@@ -183,7 +184,28 @@ const ResultsPage = (props) => {
                         <Bar dataKey="babylonJS" fill="#82ca9d" />
                     </BarChart>
                 </ResponsiveContainer>
-                <Typography variant='h6' align='center' gutterBottom>
+                <Typography variant='h6' align='center' gutterBottom style={{margin: '36px 0'}}>
+                    Scene details
+                </Typography>
+                <TableContainer>
+                    <Table aria-label="simple table">
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>Geometries</TableCell>
+                                <TableCell>Textures</TableCell>
+                                <TableCell>Triangles</TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            <TableRow>
+                                <TableCell>{cookies.Info.geometries}</TableCell>
+                                <TableCell>{cookies.Info.textures}</TableCell>
+                                <TableCell>{cookies.Info.triangles}</TableCell>
+                            </TableRow>
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+                <Typography variant='h6' align='center' gutterBottom style={{margin: '36px 0'}}>
                     Frames per second during the test [frames / s]
                 </Typography>
                 <ResponsiveContainer width='100%' height={300}>

@@ -78,6 +78,11 @@ const ThreePage = () => {
                 }, 100);
                 setTimeout(()=>{
                     setCookie('ThreeJS', {loadTime: loadEnd - loadStart, fps: fpsArray, resolution});
+                    setCookie('Info', {
+                        geometries: renderer.info.memory.geometries, 
+                        textures: renderer.info.memory.textures, 
+                        triangles: renderer.info.render.triangles, 
+                    });
                     history.push('/babylon-js');
                 }, 10000);
                 
